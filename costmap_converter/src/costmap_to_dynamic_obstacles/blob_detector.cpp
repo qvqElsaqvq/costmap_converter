@@ -191,3 +191,11 @@ void BlobDetector::updateParameters(const Params& parameters)
 {
   params_ = parameters;
 }
+
+cv::SimpleBlobDetector::Params BlobDetector::getParams() const {
+	return params_;
+}
+
+void BlobDetector::setParams(const Params & params){
+	params_ = params;
+}

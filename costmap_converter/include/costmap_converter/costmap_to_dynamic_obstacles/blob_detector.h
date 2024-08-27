@@ -91,6 +91,10 @@ public:
 
   //! Update internal parameters
   void updateParameters(const cv::SimpleBlobDetector::Params& parameters);
+  
+  virtual cv::SimpleBlobDetector::Params getParams() const;
+  
+  virtual void setParams(const cv::SimpleBlobDetector::Params & params); 
 
 protected:
   struct Center
@@ -102,6 +106,7 @@ protected:
 
   virtual void findBlobs(const cv::Mat& image, const cv::Mat& binary_image, std::vector<Center>& centers,
                          std::vector<std::vector<cv::Point>>& cur_contours) const;
+                         
 
   std::vector<std::vector<cv::Point>> contours_;
 
